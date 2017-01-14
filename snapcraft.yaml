@@ -1,0 +1,18 @@
+name: python0
+version: 0.9.1
+summary: ancient version of Python for programming archeologists
+description: |
+    This snap contains the oldest version of Python that is still available,
+    namely Pytohn 0.9.1. It is provided as a snap using classic confinement so
+    that developers can use it for experiments and research.
+confinement: classic
+grade: stable
+assumes: [snapd2.20]
+apps:
+    python0:
+        command: usr/bin/python0
+parts:
+    python0:
+        plugin: make
+        source: https://www.python.org/ftp/python/src/Python-0.9.1.tar.gz
+        makefile: ../../../python0.Makefile

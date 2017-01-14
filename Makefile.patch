@@ -1,0 +1,14 @@
+--- Makefile.orig	2017-01-14 20:44:56.154201763 +0100
++++ Makefile.fixed	2017-01-14 20:57:04.890163477 +0100
+@@ -379,9 +379,8 @@
+ # Main Targets
+ # ============
+ 
+-python:                libpython.a $(OBJECTS) $(LIBDEPS) Makefile
+-	$(CC) $(CFLAGS) $(OBJECTS) $(LIBS) -o @python
+-	mv @python python
++python:                libpython.a $(OBJECTS) $(LIBDEPS)
++	$(CC) $^ $(LDFLAGS) $(LDLIBS) $(LIBS) -o $@
+ 
+ libpython.a:   $(LIBOBJECTS)
+ 	-rm -f @lib
