@@ -25,7 +25,7 @@ all:
 
 .PHONY:
 install:
-	install -m 0755 -D src/python $(DESTDIR)/usr/bin/python0
+	install -m 0755 --strip -D src/python $(DESTDIR)/usr/bin/python0
 	install -d $(DESTDIR)/usr/lib/python0 
 	install -m 0644 lib/*.py $(DESTDIR)/usr/lib/python0/
 
